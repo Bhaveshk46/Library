@@ -67,6 +67,13 @@ function showBook() {
 }
 addBookToLibrary("Hogwarts", "Bhavesh", 45, "read");
 addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
+
 console.log(myLibrary);
 showBook()
 
