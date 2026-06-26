@@ -31,27 +31,36 @@ function showBook() {
   myLibrary.map((storedBook)=>{
     //Creates an parent div or card like container
     const groupOfBooks = document.createElement("div");
+    const card = document.createElement("div");
+    groupOfBooks.appendChild(card);
+    card.classList.add("dispCard");
+    groupOfBooks.classList.add("groupOfBook");
     document.body.appendChild(groupOfBooks);
+
 
     //Creates a div containing the title of the book and displays it
     const dispTitle = document.createElement("div");
+    dispTitle.classList.add("title");
     dispTitle.textContent = `Title:${storedBook.title}`;
-    groupOfBooks.appendChild(dispTitle);
+    card.appendChild(dispTitle);
 
      //Creates a div containing the author of the book and displays it
     const dispAuthor = document.createElement("div");
+    dispAuthor.classList.add("author");
     dispAuthor.textContent = `Author:${storedBook.author}`;
-    groupOfBooks.appendChild(dispAuthor);
+    card.appendChild(dispAuthor);
 
      //Creates a div containing the pages of the book and displays it
     const dispPages = document.createElement("div");
+    dispPages.classList.add("pages");
     dispPages.textContent = `Pages:${storedBook.pages}`;
-    groupOfBooks.appendChild(dispPages);
+    card.appendChild(dispPages);
 
      //Creates a div containing the status of the book and displays it
     const dispStatus = document.createElement("div");
+    dispStatus.classList.add("status");
     dispStatus.textContent = `Status:${storedBook.read}`;
-    groupOfBooks.appendChild(dispStatus);
+    card.appendChild(dispStatus);
 
   })
 }
