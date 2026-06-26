@@ -18,7 +18,7 @@ const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
 console.log(theHobbit.info());
 
 //inp means input
-function addBookToLibrary(inpTitle,inpAuthor,inpPages,inpRead) {
+function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
   let title = inpTitle;
   let author = inpAuthor;
   let pages = inpPages;
@@ -27,16 +27,17 @@ function addBookToLibrary(inpTitle,inpAuthor,inpPages,inpRead) {
   myLibrary.push(newBook);
 }
 
+//Creates an parent div like a container
+const groupOfBooks = document.createElement("div");
+
 function showBook() {
-  myLibrary.map((storedBook)=>{
-    //Creates an parent div or card like container
-    const groupOfBooks = document.createElement("div");
+  myLibrary.map((storedBook) => {
+    // creates cards
     const card = document.createElement("div");
     groupOfBooks.appendChild(card);
     card.classList.add("dispCard");
     groupOfBooks.classList.add("groupOfBook");
     document.body.appendChild(groupOfBooks);
-
 
     //Creates a div containing the title of the book and displays it
     const dispTitle = document.createElement("div");
@@ -44,19 +45,19 @@ function showBook() {
     dispTitle.textContent = `Title:${storedBook.title}`;
     card.appendChild(dispTitle);
 
-     //Creates a div containing the author of the book and displays it
+    //Creates a div containing the author of the book and displays it
     const dispAuthor = document.createElement("div");
     dispAuthor.classList.add("author");
     dispAuthor.textContent = `Author:${storedBook.author}`;
     card.appendChild(dispAuthor);
 
-     //Creates a div containing the pages of the book and displays it
+    //Creates a div containing the pages of the book and displays it
     const dispPages = document.createElement("div");
     dispPages.classList.add("pages");
     dispPages.textContent = `Pages:${storedBook.pages}`;
     card.appendChild(dispPages);
 
-     //Creates a div containing the status of the book and displays it
+    //Creates a div containing the status of the book and displays it
     const dispStatus = document.createElement("div");
     dispStatus.classList.add("status");
     dispStatus.textContent = `Status:${storedBook.read}`;
@@ -64,8 +65,8 @@ function showBook() {
 
   })
 }
-addBookToLibrary("Hogwarts","Bhavesh",45,"read");
-addBookToLibrary("magic","kumawat",64,"not read yet");
+addBookToLibrary("Hogwarts", "Bhavesh", 45, "read");
+addBookToLibrary("magic", "kumawat", 64, "not read yet");
 console.log(myLibrary);
 showBook()
 
