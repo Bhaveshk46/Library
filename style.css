@@ -7,7 +7,6 @@ body {
 .groupOfBook {
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    grid-auto-flow: column;
     gap: 40px;
 }
 
