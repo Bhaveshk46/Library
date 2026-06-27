@@ -11,8 +11,37 @@
 
 <body>
     <div class="header"> 
-        <button>New Book</button>
+        <button class="open-button">New Book</button>
     </div>
+
+    <dialog  class="book-details">
+        <form method="dialog">
+            <legend>Enter your book details below</legend>
+            <div>
+                <label for="bookTitle">Title</label>
+                <input type="text" id="bookTitle" name="inpTitle">
+            </div>
+            <div>
+                <label for="bookAuthor">Author</label>
+                <input type="text" id="bookAuthor" name="inpAuthor">
+            </div>
+            <div>
+                <label for="bookPages">Pages</label>
+                <input type="number" id="bookPages" name="inpPages">
+            </div>
+            <div>
+                <label for="bookStatus">Status</label>
+                <select name="inpStatus" id="bookStatus">
+                    <option value="yes">Read</option>
+                    <option value="no">Not read yet</option>
+                </select>
+            </div>
+        </form>
+        <div>
+            <button type="submit">Add Book</button>
+            <button class="close-button">Close</button>
+        </div>
+    </dialog>
     <script src="script.js" defer></script>
 
 </body>
