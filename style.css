@@ -59,7 +59,7 @@ form div {
     flex-direction: column;
 }
 
-.book-details {
+.book-details[open] {
     border-radius: 15px;
     border: none;
     height: 400px;
