@@ -9,21 +9,12 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
   this.id = crypto.randomUUID();
-  this.info = function () {
-    return (`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`);
-  }
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
-console.log(theHobbit.info());
 
 //inp means input
 function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
-  let title = inpTitle;
-  let author = inpAuthor;
-  let pages = inpPages;
-  let read = inpRead;
-  let newBook = new Book(title, author, pages, read);
+  let newBook = new Book(inpTitle, inpAuthor, inpPages, inpRead);
   myLibrary.push(newBook);
 }
 
@@ -72,36 +63,33 @@ addBookToLibrary("magic", "kumawat", 64, "not read yet");
 addBookToLibrary("magic", "kumawat", 64, "not read yet");
 addBookToLibrary("magic", "kumawat", 64, "not read yet");
 addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
 
-console.log(myLibrary);
-showBook();
+
+
 //Creation of buttons logic
 const newBook = document.querySelector(".open-button");
 const bookDetails = document.querySelector(".book-details");
 const close = document.querySelector(".close-button");
 
-newBook.addEventListener("click",()=>{
+newBook.addEventListener("click", () => {
   bookDetails.showModal();
 })
 
-close.addEventListener("click",()=>{
+close.addEventListener("click", () => {
   bookDetails.close();
 })
 
-document.getElementById("myForm").addEventListener("submit",(event)=>{
+//Logic for the submit button
+document.getElementById("myForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  const inpTitle = document.getElementById("bookTitle").value;
+  const inpAuthor = document.getElementById("bookAuthor").value;
+  const inpPages = document.getElementById("bookPages").value;
+  const dropdown = document.getElementById("bookStatus");
+  const value = dropdown.value;
+  const inpRead = dropdown.options[dropdown.selectedIndex].text;
+  addBookToLibrary(inpTitle,inpAuthor,inpPages,inpRead);
+  showBook();
 })
 
-const inpTitle = document.getElementById("bookTitle").value;
-console.log(inpTitle);
-const inpAuthor = document.getElementById("bookAuthor").value;
-const inpPages = document.getElementById("bookPages").value;
-const dropdown = document.getElementById("bookStatus");
-const value = dropdown.value;
-const inpRead = dropdown.options[dropdown.selectedIndex].text;
 
-console.log(inpTitle);
-console.log(inpAuthor);
-console.log(inpPages);
-console.log(inpRead);
