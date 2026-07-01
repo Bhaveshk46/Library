@@ -15,7 +15,7 @@
     </div>
 
     <dialog class="book-details">
-        <form method="dialog">
+        <form method="dialog" name="bookForm" id="myForm">
             <legend>Enter your book details below</legend>
             <div>
                 <label for="bookTitle">Title</label>
@@ -39,7 +39,7 @@
         </form>
         <div class="buttons">
             <div>
-                <button class="submit" type="submit">Add Book</button>
+                <button class="submit" type="submit" form="myForm">Add Book</button>
                 <button class="close-button">Close</button>
             </div>
         </div>

@@ -76,7 +76,7 @@ addBookToLibrary("magic", "kumawat", 64, "not read yet");
 
 console.log(myLibrary);
 showBook();
-
+//Creation of buttons logic
 const newBook = document.querySelector(".open-button");
 const bookDetails = document.querySelector(".book-details");
 const close = document.querySelector(".close-button");
@@ -89,5 +89,19 @@ close.addEventListener("click",()=>{
   bookDetails.close();
 })
 
+document.getElementById("myForm").addEventListener("submit",(event)=>{
+  event.preventDefault();
+})
 
+const inpTitle = document.getElementById("bookTitle").value;
+console.log(inpTitle);
+const inpAuthor = document.getElementById("bookAuthor").value;
+const inpPages = document.getElementById("bookPages").value;
+const dropdown = document.getElementById("bookStatus");
+const value = dropdown.value;
+const inpRead = dropdown.options[dropdown.selectedIndex].text;
 
+console.log(inpTitle);
+console.log(inpAuthor);
+console.log(inpPages);
+console.log(inpRead);
