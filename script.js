@@ -71,6 +71,7 @@ close.addEventListener("click", () => {
 //Logic for the submit button
 document.getElementById("myForm").addEventListener("submit", (event) => {
   event.preventDefault();
+  bookDetails.close();
   const inpTitle = document.getElementById("bookTitle").value;
   const inpAuthor = document.getElementById("bookAuthor").value;
   const inpPages = document.getElementById("bookPages").value;
