@@ -22,7 +22,7 @@ function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
 const groupOfBooks = document.createElement("div");
 
 function showBook() {
-  myLibrary.map((storedBook) => {
+  latestBook = myLibrary[myLibrary.length-1];
     // creates cards
     const card = document.createElement("div");
     groupOfBooks.appendChild(card);
@@ -33,38 +33,27 @@ function showBook() {
     //Creates a div containing the title of the book and displays it
     const dispTitle = document.createElement("div");
     dispTitle.classList.add("title");
-    dispTitle.textContent = `Title:${storedBook.title}`;
+    dispTitle.textContent = `Title:${latestBook.title}`;
     card.appendChild(dispTitle);
 
     //Creates a div containing the author of the book and displays it
     const dispAuthor = document.createElement("div");
     dispAuthor.classList.add("author");
-    dispAuthor.textContent = `Author:${storedBook.author}`;
+    dispAuthor.textContent = `Author:${latestBook.author}`;
     card.appendChild(dispAuthor);
 
     //Creates a div containing the pages of the book and displays it
     const dispPages = document.createElement("div");
     dispPages.classList.add("pages");
-    dispPages.textContent = `Pages:${storedBook.pages}`;
+    dispPages.textContent = `Pages:${latestBook.pages}`;
     card.appendChild(dispPages);
 
     //Creates a div containing the status of the book and displays it
     const dispStatus = document.createElement("div");
     dispStatus.classList.add("status");
-    dispStatus.textContent = `Status:${storedBook.read}`;
+    dispStatus.textContent = `Status:${latestBook.read}`;
     card.appendChild(dispStatus);
-
-  })
 }
-addBookToLibrary("Hogwarts", "Bhavesh", 45, "read");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-addBookToLibrary("magic", "kumawat", 64, "not read yet");
-
-
 
 //Creation of buttons logic
 const newBook = document.querySelector(".open-button");
