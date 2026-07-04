@@ -22,37 +22,42 @@ function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
 const groupOfBooks = document.createElement("div");
 
 function showBook() {
-  latestBook = myLibrary[myLibrary.length-1];
-    // creates cards
-    const card = document.createElement("div");
-    groupOfBooks.appendChild(card);
-    card.classList.add("dispCard");
-    groupOfBooks.classList.add("groupOfBook");
-    document.body.appendChild(groupOfBooks);
+  latestBook = myLibrary[myLibrary.length - 1];
+  // creates cards
+  const card = document.createElement("div");
+  groupOfBooks.appendChild(card);
+  card.classList.add("dispCard");
+  groupOfBooks.classList.add("groupOfBook");
+  document.body.appendChild(groupOfBooks);
 
-    //Creates a div containing the title of the book and displays it
-    const dispTitle = document.createElement("div");
-    dispTitle.classList.add("title");
-    dispTitle.textContent = `Title:${latestBook.title}`;
-    card.appendChild(dispTitle);
+  //Creates a div containing the title of the book and displays it
+  const dispTitle = document.createElement("div");
+  dispTitle.classList.add("title");
+  dispTitle.textContent = `Title:${latestBook.title}`;
+  card.appendChild(dispTitle);
 
-    //Creates a div containing the author of the book and displays it
-    const dispAuthor = document.createElement("div");
-    dispAuthor.classList.add("author");
-    dispAuthor.textContent = `Author:${latestBook.author}`;
-    card.appendChild(dispAuthor);
+  //Creates a div containing the author of the book and displays it
+  const dispAuthor = document.createElement("div");
+  dispAuthor.classList.add("author");
+  dispAuthor.textContent = `Author:${latestBook.author}`;
+  card.appendChild(dispAuthor);
 
-    //Creates a div containing the pages of the book and displays it
-    const dispPages = document.createElement("div");
-    dispPages.classList.add("pages");
-    dispPages.textContent = `Pages:${latestBook.pages}`;
-    card.appendChild(dispPages);
+  //Creates a div containing the pages of the book and displays it
+  const dispPages = document.createElement("div");
+  dispPages.classList.add("pages");
+  dispPages.textContent = `Pages:${latestBook.pages}`;
+  card.appendChild(dispPages);
 
-    //Creates a div containing the status of the book and displays it
-    const dispStatus = document.createElement("div");
-    dispStatus.classList.add("status");
-    dispStatus.textContent = `Status:${latestBook.read}`;
-    card.appendChild(dispStatus);
+  //Creates a div containing the status of the book and displays it
+  const dispStatus = document.createElement("div");
+  dispStatus.classList.add("status");
+  dispStatus.textContent = `Status:${latestBook.read}`;
+  card.appendChild(dispStatus);
+
+  const dataId = document.createElement("div");
+  dataId.dataset.ID = "latestBook.id";
+  card.appendChild(dataID);
+
 }
 
 //Creation of buttons logic
@@ -78,7 +83,7 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   const dropdown = document.getElementById("bookStatus");
   const value = dropdown.value;
   const inpRead = dropdown.options[dropdown.selectedIndex].text;
-  addBookToLibrary(inpTitle,inpAuthor,inpPages,inpRead);
+  addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead);
   showBook();
   document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
