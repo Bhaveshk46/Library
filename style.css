@@ -1,6 +1,8 @@
 body {
-    background-image: url(images/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg);
-    background-size: contain;
+    background-image: url(images/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: cursive, 'Times New Roman', Times, serif;
 }
 
