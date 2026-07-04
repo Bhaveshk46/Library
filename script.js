@@ -80,6 +80,7 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   const inpRead = dropdown.options[dropdown.selectedIndex].text;
   addBookToLibrary(inpTitle,inpAuthor,inpPages,inpRead);
   showBook();
+  document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
 
 
