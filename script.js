@@ -30,6 +30,7 @@ function showBook() {
   card.dataset.id = latestBook.id;  //assigns unique id to the card 
   groupOfBooks.classList.add("groupOfBook");
   document.body.appendChild(groupOfBooks);
+  console.log(latestBook.id);
 
   //Creates a div containing the title of the book and displays it
   const dispTitle = document.createElement("div");
@@ -55,10 +56,19 @@ function showBook() {
   dispStatus.textContent = `Status:${latestBook.read}`;
   card.appendChild(dispStatus);
 
+  //Creation of delete button
   const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("Delete");
-  deleteBtn.textContent="Delete";
-  card.appendChild(deleteBtn); 
+  deleteBtn.id = "Delete";
+  deleteBtn.dataset.id = latestBook.id; 
+  deleteBtn.textContent = "Delete";
+  card.appendChild(deleteBtn);
+
+  //Delete button logic
+  const deleteLogic = document.querySelector(`[data-id="${latestBook.id}"]`);
+  console.log(deleteLogic);
+  deleteLogic.addEventListener("click", () => {
+    deleteLogic.remove();
+  })
 
 }
 
@@ -89,5 +99,3 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   showBook();
   document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
-
-
