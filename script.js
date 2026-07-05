@@ -11,6 +11,17 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
+Book.prototype.status=function(){
+  if(this.status =="Read"){
+    this.status = "Not read yet"
+  }
+  else{
+    this.status = "Read";
+  }
+
+  console.log(this.status);
+}
+
 //inp means input
 function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
   let newBook = new Book(inpTitle, inpAuthor, inpPages, inpRead);
@@ -21,7 +32,7 @@ function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
 const groupOfBooks = document.createElement("div");
 
 function showBook() {
-  latestBook = myLibrary[myLibrary.length - 1];
+  const latestBook = myLibrary[myLibrary.length - 1];
   // creates cards
   const card = document.createElement("div");
   groupOfBooks.appendChild(card);
@@ -54,18 +65,28 @@ function showBook() {
   dispStatus.textContent = `Status:${latestBook.read}`;
   card.appendChild(dispStatus);
 
+  //A container for the change status button and delete button
+  const btnContainer = document.createElement("div");
+  btnContainer.classList.add("container");
+  card.appendChild(btnContainer);
+
   //Creation of changing status button
   const statusBtn = document.createElement("button");
   statusBtn.textContent = "Change status";
   statusBtn.id = "status"
-  card.appendChild(statusBtn);
+  btnContainer.appendChild(statusBtn);
+
+  //Creation of change status button logic
+  statusBtn.addEventListener("click",()=>{
+    latestBook.status();
+  })
 
   //Creation of delete button
   const deleteBtn = document.createElement("button");
   deleteBtn.id = "Delete";
   deleteBtn.dataset.id = latestBook.id;
   deleteBtn.textContent = "Delete";
-  card.appendChild(deleteBtn);
+  btnContainer.appendChild(deleteBtn);
 
   //Delete button logic
   const deleteLogic = document.querySelector(`[data-id="${latestBook.id}"]`);
@@ -105,3 +126,4 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
 
 addBookToLibrary("Bhavesh","Kumawat",232,"Read");
 showBook();
+
