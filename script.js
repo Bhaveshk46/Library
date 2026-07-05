@@ -11,15 +11,16 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
-Book.prototype.status=function(){
-  if(this.status =="Read"){
-    this.status = "Not read yet"
+Book.prototype.status = function () {
+  if (this.read == "Read") {
+    this.read = "Not read yet";
   }
-  else{
-    this.status = "Read";
+  else {
+    this.read = "Read";
   }
 
-  console.log(this.status);
+  console.log(this.read);
+  console.log(myLibrary);
 }
 
 //inp means input
@@ -77,8 +78,9 @@ function showBook() {
   btnContainer.appendChild(statusBtn);
 
   //Creation of change status button logic
-  statusBtn.addEventListener("click",()=>{
+  statusBtn.addEventListener("click", () => {
     latestBook.status();
+    dispStatus.textContent = `Status:${latestBook.read}`;
   })
 
   //Creation of delete button
@@ -124,6 +126,6 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
 
-addBookToLibrary("Bhavesh","Kumawat",232,"Read");
+addBookToLibrary("Bhavesh", "Kumawat", 232, "Read");
 showBook();
 
