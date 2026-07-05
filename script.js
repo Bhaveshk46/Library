@@ -18,9 +18,6 @@ Book.prototype.status = function () {
   else {
     this.read = "Read";
   }
-
-  console.log(this.read);
-  console.log(myLibrary);
 }
 
 //inp means input
@@ -125,7 +122,3 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   showBook();
   document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
-
-addBookToLibrary("Bhavesh", "Kumawat", 232, "Read");
-showBook();
-
