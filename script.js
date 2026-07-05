@@ -11,7 +11,6 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
-
 //inp means input
 function addBookToLibrary(inpTitle, inpAuthor, inpPages, inpRead) {
   let newBook = new Book(inpTitle, inpAuthor, inpPages, inpRead);
@@ -30,7 +29,6 @@ function showBook() {
   card.dataset.id = latestBook.id;  //assigns unique id to the card 
   groupOfBooks.classList.add("groupOfBook");
   document.body.appendChild(groupOfBooks);
-  console.log(latestBook.id);
 
   //Creates a div containing the title of the book and displays it
   const dispTitle = document.createElement("div");
@@ -59,13 +57,12 @@ function showBook() {
   //Creation of delete button
   const deleteBtn = document.createElement("button");
   deleteBtn.id = "Delete";
-  deleteBtn.dataset.id = latestBook.id; 
+  deleteBtn.dataset.id = latestBook.id;
   deleteBtn.textContent = "Delete";
   card.appendChild(deleteBtn);
 
   //Delete button logic
   const deleteLogic = document.querySelector(`[data-id="${latestBook.id}"]`);
-  console.log(deleteLogic);
   deleteLogic.addEventListener("click", () => {
     deleteLogic.remove();
   })
@@ -99,3 +96,6 @@ document.getElementById("myForm").addEventListener("submit", (event) => {
   showBook();
   document.getElementById("myForm").reset();  //reset the form inputs after submitting
 })
+
+addBookToLibrary("Bhavesh","Kumawat",232,"Read");
+showBook();

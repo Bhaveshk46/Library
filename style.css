@@ -104,7 +104,8 @@ form select {
     align-items: start;
 }
 
-.submit,.close-button{
+.submit,
+.close-button {
     border-radius: 10px;
     height: 30px;
     padding-left: 10px;
@@ -112,17 +113,26 @@ form select {
     border: none;
 }
 
-.close-button{
-    width:78px ;
+.close-button {
+    width: 78px;
     margin-left: 10px;
 }
 
-legend{
+legend {
     font-weight: bold;
     font-size: large;
 }
 
-input:focus{
+input:focus {
     outline: none;
     border: 2px solid black;
+}
+
+#Delete {
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    margin-top: 30px;
 }
