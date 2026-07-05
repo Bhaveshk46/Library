@@ -27,6 +27,7 @@ function showBook() {
   const card = document.createElement("div");
   groupOfBooks.appendChild(card);
   card.classList.add("dispCard");
+  card.dataset.id = latestBook.id;  //assigns unique id to the card 
   groupOfBooks.classList.add("groupOfBook");
   document.body.appendChild(groupOfBooks);
 
@@ -53,11 +54,6 @@ function showBook() {
   dispStatus.classList.add("status");
   dispStatus.textContent = `Status:${latestBook.read}`;
   card.appendChild(dispStatus);
-
-  const dataId = document.createElement("div");
-  dataId.dataset.id = latestBook.id;
-  card.appendChild(dataId);
-
 }
 
 //Creation of buttons logic
