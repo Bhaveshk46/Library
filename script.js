@@ -63,7 +63,7 @@ function showBook() {
 
   //Delete button logic
   const deleteLogic = document.querySelector(`[data-id="${latestBook.id}"]`);
-  deleteLogic.addEventListener("click", () => {
+  deleteBtn.addEventListener("click", () => {
     deleteLogic.remove();
   })
 
