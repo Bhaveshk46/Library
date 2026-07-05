@@ -54,6 +54,12 @@ function showBook() {
   dispStatus.textContent = `Status:${latestBook.read}`;
   card.appendChild(dispStatus);
 
+  //Creation of changing status button
+  const statusBtn = document.createElement("button");
+  statusBtn.textContent = "Change status";
+  statusBtn.id = "status"
+  card.appendChild(statusBtn);
+
   //Creation of delete button
   const deleteBtn = document.createElement("button");
   deleteBtn.id = "Delete";
