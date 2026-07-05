@@ -54,6 +54,12 @@ function showBook() {
   dispStatus.classList.add("status");
   dispStatus.textContent = `Status:${latestBook.read}`;
   card.appendChild(dispStatus);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("Delete");
+  deleteBtn.textContent="Delete";
+  card.appendChild(deleteBtn); 
+
 }
 
 //Creation of buttons logic
