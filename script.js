@@ -55,8 +55,8 @@ function showBook() {
   card.appendChild(dispStatus);
 
   const dataId = document.createElement("div");
-  dataId.dataset.ID = "latestBook.id";
-  card.appendChild(dataID);
+  dataId.dataset.id = latestBook.id;
+  card.appendChild(dataId);
 
 }
 
