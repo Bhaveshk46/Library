@@ -47,6 +47,8 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     border: none;
+    letter-spacing: 2px;
+    font-family: cursive, 'Times New Roman', Times, serif;
 }
 
 form {
@@ -111,6 +113,8 @@ form select {
     padding-left: 10px;
     padding-right: 10px;
     border: none;
+    letter-spacing: 2px;
+    font-family: cursive, 'Times New Roman', Times, serif;
 }
 
 .close-button {
@@ -135,9 +139,11 @@ input:focus {
     padding-right: 10px;
     border: none;
     margin-top: 30px;
+    letter-spacing: 2px;
+    font-family: cursive, 'Times New Roman', Times, serif;
 }
 
-#status{
+#status {
     border-radius: 10px;
     height: 30px;
     padding-left: 10px;
@@ -145,9 +151,14 @@ input:focus {
     border: none;
     margin-top: 30px;
     width: 59px;
+    letter-spacing: 2px;
+    font-family: cursive, 'Times New Roman', Times, serif;
+    font-size: xx-small;
+    width: 73px;
+    font-weight: 550;
 }
 
-.container{
+.container {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
